@@ -1,2 +1,2 @@
-# Exemplos de sites
+# Exemplos utilizando bootstrap
 ### Carlos Estevão

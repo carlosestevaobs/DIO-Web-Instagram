@@ -1,2 +1,2 @@
-# Exemplos de sites
+# Exemplos web
 ### Carlos Estevão
