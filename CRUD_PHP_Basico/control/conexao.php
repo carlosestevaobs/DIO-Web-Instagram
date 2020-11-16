@@ -1,7 +1,7 @@
 <?php
     $servidor = "localhost";
     $usuario = "root";
-    $senha = "NewPass$1";
+    $senha = "";
     $banco = "CRUD";
 
 
