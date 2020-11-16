@@ -26,7 +26,7 @@ include 'control/conexao.php';
 
     <!-- menu -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#"> Informática</a>
+        <a class="navbar-brand" href="#"> Exemplo básico de CRUD com PHP e MySQL</a>
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav">
                 <li class="nav-item">
