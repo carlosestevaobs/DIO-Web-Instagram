@@ -1,0 +1,57 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <span>Cadastro de funcionários</span>
+        <span class="example-spacer"></span>
+        <mat-icon class="example-icon" aria-hidden="false" aria-label="Example user verified icon">verified_user</mat-icon>
+    </mat-toolbar-row>
+</mat-toolbar>
+<div class="container">
+    <header>
+        <div class="row">
+            <div class="col col-lg-2">
+                <img src="/assets/images/estagiario.png" width="80">
+            </div>
+            <div class="col col-lg-10">
+                <h2>Exercitando Angular</h2>
+                Título da aplicação: {{ title }}
+            </div>
+        </div>
+        <hr>
+    </header>
+    <div class="row">
+        <div class="col col-lg-12">
+            <mat-tab-group mat-align-tabs="center">
+                <mat-tab label="Cadastro">
+                    <h4>
+                        <mat-icon aria-hidden="false" aria-label="">home</mat-icon>
+
+                        Por favor, preencha o formulário</h4>
+                    <hr>
+
+
+                    <input [(ngModel)]="nome" name="nome" class="form-control mb-2" placeholder="Nome">
+                    <br>
+                    <input [(ngModel)]="sobrenome" name="sobrenome" class="form-control mb-2" placeholder="Sobrenome"> <br>
+                    <input [(ngModel)]="rg" name="rg" class="form-control mb-2" placeholder="RG">
+                    <br>
+                    <input [(ngModel)]="cpf" name="cpf" class="form-control mb-2" placeholder="CPF">
+                    <br>
+                </mat-tab>
+                <mat-tab label="Confirmação">
+                    <h3>
+                        <mat-icon aria-hidden="false" aria-label="">check</mat-icon>
+                        Confirmação dos dados</h3>
+                    <hr>
+
+
+                    <label class="mb2">Nome: <i> {{ nome }}</i> </label><br>
+                    <label class="mb2">Sobrenome: <i> {{ sobrenome }}</i> </label> <br>
+                    <label class="mb2">RG: <i> {{ rg }}</i> </label> <br>
+                    <label class="mb2">CPF: <i> {{ cpf }}</i> </label> <br>
+
+                    <button class="mb2" mat-raised-button color="primary">Confirmo os dados e desejo enviar </button>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+    </div>
+</div>
