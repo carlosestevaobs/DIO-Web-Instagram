@@ -9,10 +9,10 @@
         <h1> Cadastro de livros </h1>
         <hr>
         <div class="row">
-            <div class="col-lg-2">
-                <img src="images/book.png">
+            <div class="col-lg-4">
+                <img src="images/book.png" width="100%">
             </div>
-            <div class="col-lg-10">
+            <div class="col-lg-8">
                 <h4> Preencha o formulário </h4>
                 <form enctype="multipart/form-data" action="control/salvar.php" method="POST">
                     <input type="text" name="titulo" placeholder="Título do livro" class="form-control md-2" required>
