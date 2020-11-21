@@ -8,7 +8,7 @@ if (isset($_POST['titulo'])) {
     $preco =  $_POST['preco'];
     $descricao = $_POST['descricao'];
     $arquivo = $_FILES['arquivo'];
-    
+    // cria a variável de caminho, a qual será enviada a foto
     $caminho = "../img/";
     $nome = md5(basename($_FILES['arquivo']['name']));
     //echo $nome;
@@ -20,9 +20,7 @@ if (isset($_POST['titulo'])) {
          VALUES ('$titulo', '$nome', '$descricao', '$genero', $preco);";
         // echo $sql;
          mysqli_query($conexao, $sql);
-        
         echo "arquivo enviado";
-
 
     } else {
         echo "erro ao enviar";
