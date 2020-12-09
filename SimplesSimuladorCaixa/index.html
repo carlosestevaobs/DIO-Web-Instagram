@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco JVA</title>
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+
+    <script type="text/javascript">
+        var saldo = 0;
+
+        function VerSaldo() {
+            document.getElementById("ValorSaldo").value = saldo;
+            if (saldo < 0) {
+                document.getElementById("textoSaldo").innerHTML = "<font color='red'>Cuidado, seu saldo está negativo.</font>";
+            } else {
+                document.getElementById("textoSaldo").innerHTML = "";
+            }
+            // chamar o modal via javascript
+            $("#SaldoModal").modal({
+                show: true
+            });
+
+        }
+
+        function RealizarSaque() {
+            //pegar o valor do campo de saque
+            var saque = parseFloat(document.getElementById("valorSaque").value);
+            //retirar o valor do saldo --> subtração
+            saldo = saldo - saque;
+            // zerar o campo do saque
+            document.getElementById("valorSaque").value = "";
+            document.getElementById("textoSaque").innerHTML = "Saque realizado! Clique em fechar.";
+
+
+        }
+
+        function RealizarDeposito() {
+            var deposito = parseFloat(document.getElementById("valorDeposito").value);
+            saldo = saldo + deposito;
+            document.getElementById("valorDeposito").value = "";
+            document.getElementById("textoDeposito").innerHTML = "Depósito realizado! Clique em fechar."
+
+        }
+    </script>
+</head>
+
+<body>
+    <section class="bg-light text-center">
+        <!-- <img src="imagens/logo.png" width="128 px"> -->
+    </section>
+    <section class="bg-light">
+        <div class="row">
+            <div class="col-2">
+                <a href="#" onclick="VerSaldo()">
+                    <img src="imagens/saldo.png" width="100%">
+                </a>
+                <a href="#" data-toggle="modal" data-target="#SaqueModal">
+                    <img src="imagens/saque.png" width="100%">
+                </a>
+            </div>
+            <div class="col-8 d-flex justify-content-center align-items-center">
+                <img src="imagens/logo.png" alt="logomarca" height="60%" style="opacity: 0.4;">
+            </div>
+            <div class="col-2">
+                <a href="#" data-toggle="modal" data-target="#DepositoModal">
+                    <img src="imagens/deposito.png" width="100%">
+                </a>
+                <a href="sair.html">
+                    <img src="imagens/sair.png" width="100%">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- modal do saque -->
+    <div class="modal fade" id="SaqueModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Realizar saque</h3>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <input type="text" class="form-control" id="valorSaque" placeholder="Valor a ser sacado">
+                        <p class="m-2" id="textoSaque"></p>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-success" onclick="RealizarSaque()" value="Sacar">
+                    </form>
+                    <button class="btn btn-dark" data-dismiss="modal">
+                        Fechar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal do depósito -->
+    <div class="modal fade" id="DepositoModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Realizar depósito</h3>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <input type="text" class="form-control" id="valorDeposito" placeholder="Valor a ser depositado">
+                        <p class="m-2" id="textoDeposito"></p>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-success" onclick="RealizarDeposito()" value="Depositar">
+                    </form>
+                    <button class="btn btn-dark" data-dismiss="modal">
+                    Fechar
+                </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal do saldo -->
+    <div class="modal fade" id="SaldoModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Saldo</h3>
+                </div>
+                <div class="modal-body">
+                    <input type="text" class="form-control" id="ValorSaldo" placeholder="Clique no botão para ver o saldo">
+                    <p class="m-2" id="textoSaldo"></p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-dark" data-dismiss="modal">
+                    Fechar
+                </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="JS/jquery-3.2.1.slim.min.js"></script>
+    <script src="JS/bootstrap.min.js"></script>
+</body>
+
+</html>
